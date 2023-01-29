@@ -2,7 +2,7 @@
 Name:handong Liu
 Date:28/1/2023
 Brief Project Description:ReadingTrackerApp
-GitHub URL:
+GitHub URL:https://github.com/HandongLIU/1404_assignment_2
 """
 # Create your main program in this file, using the ReadingTrackerApp class
 
