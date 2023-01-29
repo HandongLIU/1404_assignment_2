@@ -1,0 +1,65 @@
+BoxLayout:
+    # this layout has an id so we can check if it is the parent of the popup - below
+    id: main_box
+
+    BoxLayout:
+        # layout for input fields and action buttons
+        id: inputs
+        orientation: 'vertical'
+        Label:
+            text: 'Title: '
+            size_hint_y: None
+            height: '48dp'
+        TextInput:
+            id: added_Title
+            value: ''
+            size_hint_y: None
+            height: '48dp'
+            # the next two lines make it so that pressing Tab moves the cursor
+            # to the next input field instead of entering the Tab character
+            multiline: False
+            write_tab: False
+        Label:
+            text: 'Author: '
+            size_hint_y: None
+            height: '48dp'
+        TextInput:
+            id: added_Author
+            value: ''
+            size_hint_y: None
+            height: '48dp'
+            multiline: False
+            write_tab: False
+        Label:
+            text: 'Pages: '
+            size_hint_y: None
+            height: '48dp'
+        TextInput:
+            id: added_Pages
+            value: ''
+            size_hint_y: None
+            height: '48dp'
+            multiline: False
+            write_tab: False
+        Button:
+            text: 'Save Entry'
+            on_release: app.press_save(added_Title.text, added_Author.text, added_Pages)
+        Button:
+            text: 'Clear'
+            on_release: app.press_clear()
+
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+
+            GridLayout:
+                # this layout is populated with (button) widgets in app code
+                id: entries_box
+                cols: 1
+                orientation: 'lr-tb'
+        Label:
+            size_hint_y: 0.1
+            text: app.status_text
